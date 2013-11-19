@@ -13,8 +13,10 @@
         A simple employee directory application
     </description>
 
-    <author href="http://coenraets.org" email="ccoenraets@gmail.com">
-        Christophe Coenraets
+    <author href="http://beytun.com" email="maximmladenov@gmail.com">
+        Maxim Mladenov
     </author>
+	
+	<gap:plugin name="com.phonegap.plugins.barcodescanner" />
 
 </widget>

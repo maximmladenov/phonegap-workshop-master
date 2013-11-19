@@ -35,7 +35,15 @@ var app = {
             this.store.findById(Number(match[1]), function(employee) {
                 self.slidePage(new EmployeeView(employee).render());
             });
+			return;			
         }
+		
+		match = hash.match(/^#scan/);
+		if (match){
+			console.log("beytun ",hash, match);
+			self.slidePage(new ScanView().render());
+			return;	
+		}
     },
 
     slidePage: function(page) {
