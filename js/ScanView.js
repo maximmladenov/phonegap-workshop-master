@@ -10,9 +10,8 @@ var ScanView = function() {
         return this;
     };
 
-	var scanner = cordova.require("cordova/plugin/BarcodeScanner");
     this.scanQRCode = function() {
-		scanner.scan(
+		cordova.plugins.barcodeScanner.scan(
 		  function (result) {
 			  alert("We got a barcode\n" +
 					"Result: " + result.text + "\n" +
