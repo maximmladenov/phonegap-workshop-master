@@ -5,11 +5,28 @@ var EmployeeView = function(employee) {
         this.el.on('click', '.add-location-btn', this.addLocation);
         this.el.on('click', '.add-contact-btn', this.addToContacts);
         this.el.on('click', '.change-pic-btn', this.changePicture);
+		this.el.on('click', '.scan-btn', this.scanQRCode);
     };
 
     this.render = function() {
         this.el.html(EmployeeView.template(employee));
         return this;
+    };
+	
+	this.scanQRCode = function() {
+		event.preventDefault();
+		console.log("scanQRCode");
+		cordova.plugin.BarcodeScanner.scan(
+		  function (result) {
+			  alert("We got a barcode\n" +
+					"Result: " + result.text + "\n" +
+					"Format: " + result.format + "\n" +
+					"Cancelled: " + result.cancelled);
+		  }, 
+		  function (error) {
+			  alert("Scanning failed: " + error);
+		  }
+	   );
     };
 
     this.addLocation = function(event) {

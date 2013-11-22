@@ -2,7 +2,7 @@ var ScanView = function() {
 
     this.initialize = function() {
         this.el = $('<div/>');
-        
+		this.el.load(this.scanQRCode);
     };
 
     this.render = function() {
@@ -11,7 +11,8 @@ var ScanView = function() {
     };
 
     this.scanQRCode = function() {
-		cordova.plugins.barcodeScanner.scan(
+		console.log("deneme");
+		window.plugins.barcodeScanner.scan(
 		  function (result) {
 			  alert("We got a barcode\n" +
 					"Result: " + result.text + "\n" +
@@ -22,9 +23,9 @@ var ScanView = function() {
 			  alert("Scanning failed: " + error);
 		  }
 	   );
-   }
+   };
 	
-    this.initialize();
+   this.initialize();
 
 }
 
