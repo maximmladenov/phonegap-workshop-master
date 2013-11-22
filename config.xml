@@ -17,5 +17,5 @@
         Maxim Mladenov
     </author>
 	
-	<gap:plugin name="com.phonegap.plugins.barcodescanner.BarcodeScanner" />
+	<gap:plugin name="com.phonegap.plugins.barcodescanner" />
 </widget>
